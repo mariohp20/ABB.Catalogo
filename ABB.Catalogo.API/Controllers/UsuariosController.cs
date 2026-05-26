@@ -12,6 +12,7 @@ namespace ABB.Catalogo.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //ruta: api/usuarios/...
     public class UsuariosController : ControllerBase
     {
         private readonly IUsuarioLN _usuarioLN;
@@ -97,7 +98,7 @@ namespace ABB.Catalogo.API.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "1")]
+        //[Authorize(Roles = "1")]
         public async Task<IActionResult> GetUsuarioPorId(int id)
         {
             var usuario = await _usuarioLN.ObtenerUsuarioPorIdAsync(id);

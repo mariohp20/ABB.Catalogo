@@ -20,6 +20,7 @@ namespace ABB.Catalogo.AccesoDatos.Repositorios
         public async Task<List<Usuario>> ListarUsuariosAsync()
         {
             using IDbConnection db = new SqlConnection(_cadenaConexion);
+            Console.WriteLine($"Cadena de conexión: {_cadenaConexion}"); // Verificar la cadena de conexión
             var resultado = await db.QueryAsync<Usuario>(
                 "ListarUsuarios",
                 commandType: CommandType.StoredProcedure);

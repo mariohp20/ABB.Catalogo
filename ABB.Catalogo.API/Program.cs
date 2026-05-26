@@ -42,7 +42,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 // 3. CONFIGURACIÓN DE CORS (Cross-Origin Resource Sharing)
 
-// Esto es VITAL para que nuestro Frontend en React no sea bloqueado
+/* Esto es VITAL para que nuestro Frontend en React no sea bloqueado
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PermitirReact", policy =>
@@ -51,9 +51,20 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
+});*/
+//Para angular
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirAngular", builder =>
+    {
+        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
 });
 
 var app = builder.Build();
+
+
+
 
 // 4. PIPELINE DE MIDDLEWARES
 
@@ -65,8 +76,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// 1. CORS: Primero permitimos que React entre
-app.UseCors("PermitirReact");
+// 1. CORS: Primero permitimos que Angular entre
+app.UseCors("PermitirAngular");
 
 // 2. Autenticación: Validamos quién es (Si trae su JWT)
 app.UseAuthentication();

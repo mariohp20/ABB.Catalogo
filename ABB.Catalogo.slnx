@@ -4,12 +4,6 @@
     <Project Path="ABB.Catalogo.API/ABB.Catalogo.API.csproj" Id="3370aa89-3347-42b5-99b9-ce11697bc6a3" />
     <Project Path="ABB.Catalogo.LogicaNegocio/ABB.Catalogo.LogicaNegocio.csproj" Id="13f27c10-1691-4fea-9245-a3428921d731" />
   </Folder>
-  <Folder Name="/02 Frontend/">
-    <Project Path="ABB.Catalogo.ClienteWeb/abb.catalogo.clienteweb.esproj">
-      <Build />
-      <Deploy />
-    </Project>
-  </Folder>
   <Folder Name="/03 Transversal/">
     <Project Path="ABB.Catalogo.Entidades/ABB.Catalogo.Entidades.csproj" Id="6e8853a4-768b-4534-9c0b-508fe5f3ef17" />
   </Folder>
